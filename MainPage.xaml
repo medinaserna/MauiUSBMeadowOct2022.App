@@ -23,9 +23,48 @@
                 Title="Select ComPort"
                 HorizontalOptions="Center"
                 ></Picker>
-                
-                 </HorizontalStackLayout>
+                </HorizontalStackLayout>
         
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <HorizontalStackLayout>
+                <Button
+                    x:Name="btnSend"
+                    Text="Send"
+                    Clicked="btnSend_Clicked"
+                    HorizontalOptions="Center"
+                ></Button>
+
+                <Entry
+                    x:Name="entrySend"
+                    Text="###1111196"
+                    HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label
+                    Text="Received packet"
+                    HorizontalOptions="Center"
+                    ></Label>
+                <CheckBox
+                    x:Name="checkBoxHistory"
+                    IsChecked="True"
+                    HorizontalOptions="Center"
+                    ></CheckBox>
+                               
+            </HorizontalStackLayout>
+            <ScrollView
+                x:Name="scrollViewRecData"
+                MaximumHeightRequest="500"
+                VerticalOptions="StartAndExpand"
+                > </ScrollView>
+            <Label
+                x:Name="labelRxdata"
+                Text="Received Packet"
+                MinimumWidthRequest="310"
+                ></Label>
+            
+            
         </VerticalStackLayout>
           
     </HorizontalStackLayout>
