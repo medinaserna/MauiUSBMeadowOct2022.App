@@ -69,17 +69,17 @@ public partial class MainPage : ContentPage
 		if (newPacket.Length > 37) {
 
 			if (newPacket.Substring(0, 3) == "###") {
-				string parsedData = $"{newPacket.Length, -13}"+
-                                    $"{newPacket.Substring(0,3),-12}" +
-                                    $"{newPacket.Substring(3, 3),-12}" +
-                                    $"{newPacket.Substring(6, 4),-12}" +
-                                    $"{newPacket.Substring(10, 4),-12}" +
-                                    $"{newPacket.Substring(14, 4),-12}" +
-                                    $"{newPacket.Substring(18, 4),-12}" +
-                                    $"{newPacket.Substring(22, 4),-12}" +
-                                    $"{newPacket.Substring(26, 4),-12}" +
-                                    $"{newPacket.Substring(30, 4),-12}" +
-                                    $"{newPacket.Substring(34, 3),-12}"  + "\r\n";
+				string parsedData = $"{newPacket.Length, -14}"+
+                                    $"{newPacket.Substring(0,3),-14}" +
+                                    $"{newPacket.Substring(3, 3),-14}" +
+                                    $"{newPacket.Substring(6, 4),-14}" +
+                                    $"{newPacket.Substring(10, 4),-14}" +
+                                    $"{newPacket.Substring(14, 4),-14}" +
+                                    $"{newPacket.Substring(18, 4),-14}" +
+                                    $"{newPacket.Substring(22, 4),-14}" +
+                                    $"{newPacket.Substring(26, 4),-14}" +
+                                    $"{newPacket.Substring(30, 4),-14}" +
+                                    $"{newPacket.Substring(34, 3),-14}"  + "\r\n";
 
 
 				if (checkBoxParsedHistory.IsChecked == true)

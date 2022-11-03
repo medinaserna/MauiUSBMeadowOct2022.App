@@ -5,7 +5,7 @@
     <HorizontalStackLayout
         Spacing="25"
         Padding="30,0"
-        VerticalOptions="Center">
+        VerticalOptions="StartAndExpand">
         <VerticalStackLayout>
         <HorizontalStackLayout>
             <Button
@@ -48,8 +48,9 @@
                     ></Label>
                 <CheckBox
                     x:Name="checkBoxHistory"
-                    IsChecked="True"
+                    IsChecked="False"
                     HorizontalOptions="Center"
+                    Color="OrangeRed"
                     ></CheckBox>
                                
             </HorizontalStackLayout>
@@ -67,14 +68,23 @@
 
             <HorizontalStackLayout>
                 <Label
-                    Text="Lenght    Header  Number  Analog0 Analog1 Analog2 Analog3 Analog4 Analog5 Binary CkSumRX"
-                    HorizontalOptions="Center"
+                    Text="Parsed Packet"
                     ></Label>
                 <CheckBox
                     x:Name="checkBoxParsedHistory"
-                    IsChecked="True"
+                    IsChecked="False"
                     HorizontalOptions="Center"
+                    Color="Aqua"
                     ></CheckBox>
+                               
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label
+                    Text="Lenght    Header  Number  Analog0 Analog1 Analog2 Analog3 Analog4 Analog5 Binary CkSumRX"
+                    HorizontalOptions="Center"
+                    ></Label>
+               
 
             </HorizontalStackLayout>
 
