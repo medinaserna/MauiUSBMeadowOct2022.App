@@ -53,13 +53,39 @@
                     ></CheckBox>
                                
             </HorizontalStackLayout>
+
             <ScrollView
-                x:Name="scrollViewRecData"
+                x:Name="scrollViewdRecData"
+                MaximumHeightRequest="500"
+                VerticalOptions="StartAndExpand"
+                ></ScrollView>
+            <Label
+                x:Name="labelRxdata"
+                Text="Received Packet"
+                MinimumWidthRequest="310"
+                ></Label>
+
+            <HorizontalStackLayout>
+                <Label
+                    Text="Lenght    Header  Number  Analog0 Analog1 Analog2 Analog3 Analog4 Analog5 Binary CkSumRX"
+                    HorizontalOptions="Center"
+                    ></Label>
+                <CheckBox
+                    x:Name="checkBoxParsedHistory"
+                    IsChecked="True"
+                    HorizontalOptions="Center"
+                    ></CheckBox>
+
+            </HorizontalStackLayout>
+
+
+            <ScrollView
+                x:Name="scrollViewParsedData"
                 MaximumHeightRequest="500"
                 VerticalOptions="StartAndExpand"
                 > </ScrollView>
             <Label
-                x:Name="labelRxdata"
+                x:Name="labelParsedData"
                 Text="Received Packet"
                 MinimumWidthRequest="310"
                 ></Label>
