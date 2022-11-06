@@ -1,11 +1,11 @@
-﻿using System.IO.Ports;
+﻿
+using System.IO.Ports;
 using System.Text;
 
 namespace MauiUSBMeadowOct2022;
 
 public partial class MainPage : ContentPage
 {
-
 	private bool bPortOpen = false;
 	private string newPacket = "";
 	private int oldPacketNumber = -1;
@@ -14,19 +14,18 @@ public partial class MainPage : ContentPage
 	private int packetRollover = 0;
 	private int chkSumError = 0;
 
+
 	StringBuilder stringBuilderSend = new StringBuilder("###1111196");
 
 	SerialPort serialPort = new SerialPort();
-
-
 	public MainPage()
 	{
 		InitializeComponent();
+
 		string[] ports = SerialPort.GetPortNames();
 		portPicker.ItemsSource = ports;
 		portPicker.SelectedIndex = ports.Length;
 		Loaded += MainPage_Loaded;
-
 	}
 
 	private void MainPage_Loaded(object sender, EventArgs e)
@@ -45,30 +44,25 @@ public partial class MainPage : ContentPage
 	private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
 	{
 		newPacket = serialPort.ReadLine();
-		//labelRxdata.Text = newPacket;
+		//labelRXdata.Text = text;
 		MainThread.BeginInvokeOnMainThread(MyMainThreadCode);
 	}
 
 	private void MyMainThreadCode()
 	{
+		//code to run on the main thread
 		if (checkBoxHistory.IsChecked == true)
 		{
-
 			labelRxdata.Text = newPacket + labelRxdata.Text;
-
-		}
+			}
 		else
 		{
-
 			labelRxdata.Text = newPacket;
 		}
-
-
+		//labelPacketLenght.Text = newPacket.Lenght.ToString();
 		int calChkSum = 0;
-
 		if (newPacket.Length > 37)
 		{
-
 			if (newPacket.Substring(0, 3) == "###")
 			{
 				string parsedData = $"{newPacket.Length,-14}" +
