@@ -43,7 +43,7 @@
                 </HorizontalStackLayout>
             <HorizontalStackLayout>
                 <Label
-                    Text="Received packet"
+                    Text="Received packet History"
                     HorizontalOptions="Center"
                     ></Label>
                 <CheckBox
@@ -52,7 +52,17 @@
                     HorizontalOptions="Center"
                     Color="OrangeRed"
                     ></CheckBox>
-                               
+
+                <Label
+                    Text="       Parsed Packet History"
+                    ></Label>
+                <CheckBox
+                    x:Name="checkBoxParsedHistory"
+                    IsChecked="False"
+                    HorizontalOptions="Center"
+                    Color="Aqua"
+                    ></CheckBox>
+
             </HorizontalStackLayout>
 
             <ScrollView
@@ -62,26 +72,18 @@
                 ></ScrollView>
             <Label
                 x:Name="labelRxdata"
-                Text="Received Packet"
+                Text="Parsed Packet"
                 MinimumWidthRequest="310"
                 ></Label>
 
             <HorizontalStackLayout>
-                <Label
-                    Text="Parsed Packet"
-                    ></Label>
-                <CheckBox
-                    x:Name="checkBoxParsedHistory"
-                    IsChecked="False"
-                    HorizontalOptions="Center"
-                    Color="Aqua"
-                    ></CheckBox>
+               
                                
             </HorizontalStackLayout>
 
             <HorizontalStackLayout>
                 <Label
-                    Text="Lenght    Header  Number  Analog0 Analog1 Analog2 Analog3 Analog4 Analog5 Binary CkSumRX"
+                    Text="Lenght    Header  Number   Analog0   Analog1    Analog2    Analog3    Analog4     Analog5     Binary     CkSumRX"
                     HorizontalOptions="Center"
                     ></Label>
                
