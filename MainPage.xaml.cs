@@ -78,6 +78,30 @@ public partial class MainPage : ContentPage
 									$"{newPacket.Substring(34, 3),-14}" + "\r\n";
 
 
+				if (oldPacketNumber > -1)
+				{
+					if (newPacketNumber < oldPacketNumber)
+					{
+						packetRollover++;
+						labelPacketRollover.Text = packetRollover.ToString();
+						if (oldPacketNumber != 999)
+						{
+							lostPacketCount += 999 - oldPacketNumber + newPacketNumber;
+							labelPacketLost.Text = lostPacketCount.ToString();
+						}
+					}
+					else
+					{
+						if (newPacketNumber != oldPacketNumber + 1)
+						{
+							lostPacketCount += newPacketNumber - oldPacketNumber;
+							labelPacketLost.Text = lostPacketCount.ToString();
+						}
+					}
+				}
+					
+
+
 				if (checkBoxParsedHistory.IsChecked == true)
 				{
 					labelParsedData.Text = parsedData + labelParsedData.Text;
