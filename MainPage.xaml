@@ -22,12 +22,11 @@
                 x:Name="portPicker"
                 Title="Select ComPort"
                 HorizontalOptions="Center"
+                
                 ></Picker>
                 </HorizontalStackLayout>
-        
         </VerticalStackLayout>
-
-        <VerticalStackLayout>
+        <VerticalStackLayout MinimumWidthRequest="150">
             <HorizontalStackLayout>
                 <Button
                     x:Name="btnSend"
@@ -83,7 +82,9 @@
 
             <HorizontalStackLayout>
                 <Label
-                    Text="Lenght    Header  Number   Analog0   Analog1    Analog2    Analog3    Analog4     Analog5     Binary     CkSumRX"
+                    FontFamily="monospace"
+                    FontAutoScalingEnabled="False"
+                    Text="Lenght    Header  Number   Analog0   Analog1    Analog2    Analog3    Analog4     Analog5     Binary     CkSumRX  CkSumCal  lost  ChkError  Rollover"
                     HorizontalOptions="Center"
                     ></Label>
                
