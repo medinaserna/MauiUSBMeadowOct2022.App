@@ -64,7 +64,8 @@ public partial class MainPage : ContentPage
         {
             if (newPacket.Substring(0, 3) == "###")
             {
- 
+                newPacketNumber = Convert.ToInt32(newPacket.Substring(3, 3));
+
 
                 if (oldPacketNumber > -1)
                 {
@@ -80,7 +81,7 @@ public partial class MainPage : ContentPage
                     {
                         if (newPacketNumber != oldPacketNumber + 1)
                         {
-                            lostPacketCount += newPacketNumber - oldPacketNumber;
+                            lostPacketCount += newPacketNumber - oldPacketNumber - 1;
                         }
                     }
                 }
@@ -116,7 +117,6 @@ public partial class MainPage : ContentPage
                      $"{lostPacketCount, -14}" +
                      $"{chkSumError, -14}" +
                      $"{packetRollover}\r\n";
-
 
 
                 if (checkBoxParsedHistory.IsChecked == true)
