@@ -16,7 +16,7 @@ public partial class MainPage : ContentPage
 
 
     StringBuilder stringBuilderSend = new StringBuilder("###1111196");
-
+    
     SerialPort serialPort = new SerialPort();
     public MainPage()
     {
@@ -163,6 +163,61 @@ public partial class MainPage : ContentPage
         try
         {
             string messageOut = entrySend.Text;
+            messageOut += "\r\n";
+            byte[] messageBytes = Encoding.UTF8.GetBytes(messageOut);
+            serialPort.Write(messageBytes, 0, messageBytes.Length);
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Alert", ex.Message, "Ok");
+        }
+    }
+
+    private void btnBit3_Clicked(object sender, EventArgs e) 
+    {
+        ButtonClicked(3);
+    }
+
+    private void btnBit2_Clicked(object sender, EventArgs e)
+    {
+        ButtonClicked(2);
+    }
+
+    private void btnBit1_Clicked(object sender, EventArgs e)
+    {
+        ButtonClicked(1);
+    }
+
+    private void btnBit0_Clicked(object sender, EventArgs e)
+    {
+        ButtonClicked(0);
+    }
+
+    private void ButtonClicked(int i)
+    {
+        Button[] btnBit = new Button { btnBit0, btnBit1, btnBit2, btnBit3 };
+        if (btnBit[i].Text == "0")
+        {
+            btnBit[i].Text = "1";
+            stringBuilderSend[i + 3] = '1';
+        }
+        else {
+            btnBit[i].Text = "0";
+            stringBuilderSend[i + 3] = '0';
+            }
+        sendPacket();
+    }
+
+    private void sendPacket()
+    {
+        int calSendChkSum = 0;
+
+        try
+        {
+            string messageOut = stringBuilderSend.ToString();
+            for (int i = 3; i<7; i++) {
+                calSendChkSum += (byte)stringBuilderSend [i];
+             }
             messageOut += "\r\n";
             byte[] messageBytes = Encoding.UTF8.GetBytes(messageOut);
             serialPort.Write(messageBytes, 0, messageBytes.Length);

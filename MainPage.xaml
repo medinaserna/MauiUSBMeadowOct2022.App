@@ -4,7 +4,7 @@
              x:Class="MauiUSBMeadowOct2022.MainPage">
     <HorizontalStackLayout
         Spacing="25"
-        Padding="30,0"
+        Padding="20,10,0,0"
         VerticalOptions="StartAndExpand">
         <VerticalStackLayout>
         <HorizontalStackLayout>
@@ -22,9 +22,21 @@
                 x:Name="portPicker"
                 Title="Select ComPort"
                 HorizontalOptions="Center"
-                
                 ></Picker>
                 </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label
+                    Text="Bits"
+                    FontSize="Medium">
+                    </Label>
+                <Button x:Name="btnBit3" Text="1" FontSize="Medium" Clicked="btnBit3_Clicked"></Button>
+                <Button x:Name="btnBit2" Text="1" FontSize="Medium" Clicked="btnBit2_Clicked"></Button>
+                <Button x:Name="btnBit1" Text="1" FontSize="Medium" Clicked="btnBit1_Clicked"></Button>
+                <Button x:Name="btnBit0" Text="1" FontSize="Medium" Clicked="btnBit0_Clicked"></Button>
+                
+            </HorizontalStackLayout>
+            
+            
         </VerticalStackLayout>
         <VerticalStackLayout MinimumWidthRequest="150">
             <HorizontalStackLayout>
