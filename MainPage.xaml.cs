@@ -195,7 +195,7 @@ public partial class MainPage : ContentPage
 
     private void ButtonClicked(int i)
     {
-        Button[] btnBit = new Button { btnBit0, btnBit1, btnBit2, btnBit3 };
+        Button[] btnBit = new Button[] { btnBit0, btnBit1, btnBit2, btnBit3 };
         if (btnBit[i].Text == "0")
         {
             btnBit[i].Text = "1";
@@ -214,10 +214,14 @@ public partial class MainPage : ContentPage
 
         try
         {
-            string messageOut = stringBuilderSend.ToString();
             for (int i = 3; i<7; i++) {
                 calSendChkSum += (byte)stringBuilderSend [i];
              }
+            calSendChkSum %= 1000;
+            stringBuilderSend.Remove(7, 3);
+            stringBuilderSend.Insert(7, calSendChkSum.ToString());
+            string messageOut = stringBuilderSend.ToString();
+            entrySend.Text = stringBuilderSend.ToString(); 
             messageOut += "\r\n";
             byte[] messageBytes = Encoding.UTF8.GetBytes(messageOut);
             serialPort.Write(messageBytes, 0, messageBytes.Length);
