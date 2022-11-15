@@ -35,7 +35,38 @@
                 <Button x:Name="btnBit0" Text="1" FontSize="Medium" Clicked="btnBit0_Clicked"></Button>
                 
             </HorizontalStackLayout>
-            
+            <VerticalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Solar Voltage"> </Label>
+                    <Label x:Name="labelSolarVolt"
+                           MinimumWidthRequest="100"
+                           ></Label>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Battery Voltage"></Label>
+                    <Label x:Name="labelBatteryVolt"
+                           MinimumWidthRequest="100"
+                           ></Label>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Battery Current"></Label>
+                    <Label x:Name="labelBatteryCurrent"
+                           MinimumWidthRequest="100"
+                           ></Label>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="LED 1 current"></Label>
+                    <Label x:Name="labelLED1Current"
+                           MinimumWidthRequest="100"
+                           ></Label>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="LED 2 current"></Label>
+                    <Label x:Name="labelLED2Current"
+                           MinimumWidthRequest="100"
+                           ></Label>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
             
         </VerticalStackLayout>
         <VerticalStackLayout MinimumWidthRequest="150">
