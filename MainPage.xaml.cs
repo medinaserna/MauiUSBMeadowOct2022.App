@@ -109,12 +109,12 @@ public partial class MainPage : ContentPage
                 string parsedData = $"{newPacket.Length,-14}" +
                      $"{newPacket.Substring(0, 3),-14}" +
                      $"{newPacket.Substring(3, 3),-14}" +
-                     $"{newPacket.Substring(6, 4),-14}" +
+                     $"{newPacket.Substring(6, 4),-14}" +  //aqui arranca el Analog0
                      $"{newPacket.Substring(10, 4),-14}" +
                      $"{newPacket.Substring(14, 4),-14}" +
                      $"{newPacket.Substring(18, 4),-14}" +
                      $"{newPacket.Substring(22, 4),-14}" +
-                     $"{newPacket.Substring(26, 4),-14}" +
+                     $"{newPacket.Substring(26, 4),-14}" +   //Aqui finaliza con el Analog5
                      $"{newPacket.Substring(30, 4),-14}" +
                      $"{newPacket.Substring(34, 3),-14}" + 
                      $"{calChkSum, -14}" +
@@ -138,7 +138,12 @@ public partial class MainPage : ContentPage
 
     private void DisplaySolarData(string validPacket)
     {
-        
+        solarCalc.ParseSolarData(validPacket);
+        labelSolarVolt.Text = solarCalc.GetVoltage(solarCalc.analogVoltage[0]);
+        labelBatteryVolt.Text = solarCalc.GetVoltage(solarCalc.analogVoltage[2]);
+        labelBatteryCurrent.Text = solarCalc.GetCurrent(solarCalc.analogVoltage[1], solarCalc.analogVoltage[2]);
+        labelLED1Current.Text = solarCalc.GetLEDCurrent(solarCalc.analogVoltage[1], solarCalc.analogVoltage[4]);
+        labelLED2Current.Text = solarCalc.GetLEDCurrent(solarCalc.analogVoltage[1], solarCalc.analogVoltage[3]);
     }
 
     private void btnOpenClose_Clicked(object sender, EventArgs e)
