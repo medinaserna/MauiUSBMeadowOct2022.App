@@ -37,7 +37,7 @@
             </HorizontalStackLayout>
             <VerticalStackLayout>
                 <HorizontalStackLayout>
-                    <Label Text="Solar Voltage"> </Label>
+                    <Label Text="Solar Voltage   "> </Label>
                     <Label x:Name="labelSolarVolt"
                            MinimumWidthRequest="100"
                            ></Label>

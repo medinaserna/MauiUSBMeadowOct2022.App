@@ -2,6 +2,7 @@
 using System.IO.Ports;
 using System.Text;
 
+
 namespace MauiUSBMeadowOct2022;
  
 public partial class MainPage : ContentPage
@@ -19,7 +20,7 @@ public partial class MainPage : ContentPage
     
     SerialPort serialPort = new SerialPort();
 
-    SolarCalc solarCalc = new SolarCalc();
+    SolarCalc solarCalc = new SolarCalc(); //instancia de la clase
 
 
     public MainPage()
@@ -139,11 +140,11 @@ public partial class MainPage : ContentPage
     private void DisplaySolarData(string validPacket)
     {
         solarCalc.ParseSolarData(validPacket);
-        labelSolarVolt.Text = solarCalc.GetVoltage(solarCalc.analogVoltage[0]);
-        labelBatteryVolt.Text = solarCalc.GetVoltage(solarCalc.analogVoltage[2]);
-        labelBatteryCurrent.Text = solarCalc.GetCurrent(solarCalc.analogVoltage[1], solarCalc.analogVoltage[2]);
-        labelLED1Current.Text = solarCalc.GetLEDCurrent(solarCalc.analogVoltage[1], solarCalc.analogVoltage[4]);
-        labelLED2Current.Text = solarCalc.GetLEDCurrent(solarCalc.analogVoltage[1], solarCalc.analogVoltage[3]);
+       labelSolarVolt.Text = solarCalc.GetVoltage(solarCalc.analogVoltageArray[0]);
+        //labelBatteryVolt.Text = solarCalc.GetVoltage(solarCalc.analogVoltage[2]);
+        //labelBatteryCurrent.Text = solarCalc.GetCurrent(solarCalc.analogVoltage[1], solarCalc.analogVoltage[2]);
+        //labelLED1Current.Text = solarCalc.GetLEDCurrent(solarCalc.analogVoltage[1], solarCalc.analogVoltage[4]);
+        //labelLED2Current.Text = solarCalc.GetLEDCurrent(solarCalc.analogVoltage[1], solarCalc.analogVoltage[3]);
     }
 
     private void btnOpenClose_Clicked(object sender, EventArgs e)
