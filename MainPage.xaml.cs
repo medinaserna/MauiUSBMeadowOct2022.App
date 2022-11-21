@@ -141,10 +141,10 @@ public partial class MainPage : ContentPage
     {
         solarCalc.ParseSolarData(validPacket);
        labelSolarVolt.Text = solarCalc.GetVoltage(solarCalc.analogVoltageArray[0]);
-        //labelBatteryVolt.Text = solarCalc.GetVoltage(solarCalc.analogVoltage[2]);
-        //labelBatteryCurrent.Text = solarCalc.GetCurrent(solarCalc.analogVoltage[1], solarCalc.analogVoltage[2]);
-        //labelLED1Current.Text = solarCalc.GetLEDCurrent(solarCalc.analogVoltage[1], solarCalc.analogVoltage[4]);
-        //labelLED2Current.Text = solarCalc.GetLEDCurrent(solarCalc.analogVoltage[1], solarCalc.analogVoltage[3]);
+       labelBatteryVolt.Text = solarCalc.GetVoltage(solarCalc.analogVoltageArray[2]);
+       labelBatteryCurrent.Text = solarCalc.GetCurrent(solarCalc.analogVoltageArray[1], solarCalc.analogVoltageArray[2]);
+       labelLED1Current.Text = solarCalc.GetLEDCurrent(solarCalc.analogVoltageArray[1], solarCalc.analogVoltageArray[4]);
+        labelLED2Current.Text = solarCalc.GetLEDCurrent(solarCalc.analogVoltageArray[1], solarCalc.analogVoltageArray[3]);
     }
 
     private void btnOpenClose_Clicked(object sender, EventArgs e)

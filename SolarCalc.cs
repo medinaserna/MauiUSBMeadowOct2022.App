@@ -11,15 +11,32 @@ public class SolarCalc
 	//{
 	//}
 
-	internal string GetCurrent(object value1, object value2)
+	public string GetCurrent(double AnalogVoltage1, double AnalogVoltage2)
 	{
-		throw new NotImplementedException();
-	}
+		double diffVoltage = AnalogVoltage1 - AnalogVoltage2;
+		diffVoltage = diffVoltage / 100;
+		string myCurrent = $"{Convert.ToString(diffVoltage)}" + "mA";
+		return myCurrent;
+    }
 
-	internal string GetLEDCurrent(object value1, object value2)
+	internal string GetLEDCurrent(double AnalogVoltage1, double AnalogVoltage2)
 	{
-		throw new NotImplementedException();
-	}
+        double diffVoltage = AnalogVoltage1 - AnalogVoltage2;
+		string myCurrent;
+
+        if (diffVoltage > 0) {
+
+            diffVoltage = diffVoltage / 100;
+            myCurrent = $"{Convert.ToString(diffVoltage)}" + "mA";
+          
+
+        } else {
+			myCurrent = $" 0 mA";
+			
+		}
+		
+		return myCurrent;
+    }
 
 	public string GetVoltage(double analogVoltage)
 	{
