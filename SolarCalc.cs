@@ -15,8 +15,10 @@ public class SolarCalc
 	{
 		double diffVoltage = AnalogVoltage1 - AnalogVoltage2;
 		diffVoltage = diffVoltage / 100;
-		string myCurrent = $"{Convert.ToString(diffVoltage)}" + "mA";
-		return myCurrent;
+
+        // string myCurrent = $"{string.Format("{0:N1}%", (Convert.ToString(diffVoltage)))}" + "mA";
+        string myCurrent = $"{string.Format("{0:N2} ",diffVoltage )}" + " mA";
+        return myCurrent;
     }
 
 	internal string GetLEDCurrent(double AnalogVoltage1, double AnalogVoltage2)
@@ -27,11 +29,11 @@ public class SolarCalc
         if (diffVoltage > 0) {
 
             diffVoltage = diffVoltage / 100;
-            myCurrent = $"{Convert.ToString(diffVoltage)}" + "mA";
-          
+            //myCurrent = $"{Convert.ToString(diffVoltage)}" + "mA";
+            myCurrent = $"{string.Format("{0:N2} ", diffVoltage)}" + "mA";
 
         } else {
-			myCurrent = $" 0 mA";
+			myCurrent = $" 0.00 mA";
 			
 		}
 		
@@ -41,13 +43,16 @@ public class SolarCalc
 	public string GetVoltage(double analogVoltage)
 	{
 
-
+		string myAnalogVoltage;
 		analogVoltage = analogVoltage / 1000;
-		return Convert.ToString(analogVoltage);
+		//return Convert.ToString(analogVoltage);
+	
+
+		myAnalogVoltage = $"{ string.Format("{0:N2}", analogVoltage)}"+ " V";
+		return myAnalogVoltage;
 
 
-
-	}
+    }
 
 	public void ParseSolarData(string validPacket)
 	{

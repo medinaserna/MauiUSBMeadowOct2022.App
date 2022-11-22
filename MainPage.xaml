@@ -33,8 +33,25 @@
                 <Button x:Name="btnBit2" Text="1" FontSize="Medium" Clicked="btnBit2_Clicked"></Button>
                 <Button x:Name="btnBit1" Text="1" FontSize="Medium" Clicked="btnBit1_Clicked"></Button>
                 <Button x:Name="btnBit0" Text="1" FontSize="Medium" Clicked="btnBit0_Clicked"></Button>
-                
+               </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <ImageButton
+                    x:Name="imgLED1"
+                    Source="ledoff.png"
+                    HeightRequest="200"
+                    Clicked="imgLED1_Clicked"
+                    ></ImageButton>
+
+                <ImageButton
+                    x:Name="imgLED2"
+                    Source="ledoff.png"
+                    HeightRequest="200"
+                    Clicked="imgLED2_Clicked"
+                    ></ImageButton>
+
             </HorizontalStackLayout>
+            
+            
             <VerticalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Solar Voltage   "> </Label>
